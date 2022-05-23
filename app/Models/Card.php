@@ -9,13 +9,18 @@ class Card extends Model
 {
     use HasFactory;
 
-    public function user()
+    public function authorcard()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'author_id');
+    }
+
+    public function executor()
+    {
+        return $this->belongsTo(User::class, 'executor_id');
     }
 
     public function column()
     {
-        return $this->belongsTo(Column::class);
+        return $this->belongsTo(Column::class, 'column_id');
     }
 }

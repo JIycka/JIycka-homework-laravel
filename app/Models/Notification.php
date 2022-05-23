@@ -9,9 +9,9 @@ class Notification extends Model
 {
     use HasFactory;
 
-    public function card()
+    public function notificationcard()
     {
-        return $this->belongsTo(Card::class);
+        return $this->belongsTo(Card::class, 'card_id');
     }
 
     public function subscription()

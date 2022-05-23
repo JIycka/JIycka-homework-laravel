@@ -13,9 +13,9 @@ class Board extends Model
     {
         return $this->hasMany(Column::class);
     }
-    public function user()
+    public function author()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'author_id');
     }
 
 

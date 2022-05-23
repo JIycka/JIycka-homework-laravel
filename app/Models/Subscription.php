@@ -9,14 +9,14 @@ class Subscription extends Model
 {
     use HasFactory;
 
-    public function user()
+    public function subscriptionuser()
     {
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function card()
+    public function subscriptioncard()
     {
-        return $this->belongsTo(Card::class);
+        return $this->belongsTo(Card::class, 'card_id');
     }
 
     public function notification()
